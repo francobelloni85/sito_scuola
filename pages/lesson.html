@@ -169,10 +169,6 @@
 
     <script>
 
-
-        // TODO avoid to fetch data already loaded....
-        // TODO mostrare errore se c'è qualcosa che non va
-
         function GetURLBase() {
             var fullUrl = window.location.href;
             var urlObject = new URL(fullUrl);
@@ -182,7 +178,6 @@
             var resultString = baseUrl.replace(stringToRemove, "");
             return resultString;
         }
-
 
         // Load the lession text
         function LoadLessonText(index_lesson, file_name) {
@@ -293,7 +288,7 @@
                 if (lessons_clicked.includes(index_lesson)) {
                     console.log("La lezione con ID " + index_lesson_text + " è già stata caricata ...");
                 } else {
-                    console.log("<<<<<<<<<<2<<<<<<<<<<<<<");
+                    
                     // Text
                     var text_file_name = json_lesson_response.lessons[index_lesson].text;
                     console.log("loading text " + text_file_name + "....");
@@ -308,7 +303,7 @@
                     lessons_clicked.push(index_lesson);
 
                 }                
-                console.log("<<<<<<<<<<lessons_clicked<<<<<<<<<<<<<");
+                
                 console.log(lessons_clicked);
 
             } catch (ex) {
