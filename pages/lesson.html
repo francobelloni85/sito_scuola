@@ -127,42 +127,43 @@
         </div>
     </div>
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">
-                    <span class="text-highlight pr-2">{</span>
-                    <span id="grade_title" class="name">...</span>
-                    <span class="text-highlight pl-2">}</span>
-                </h1>
-                <p class="lead text-body-secondary">
-                    <span id="subject_title" class="desc d-block">...</span>
-                </p>
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">
+                        <span class="text-highlight pr-2">{</span>
+                        <span id="grade_title" class="name">...</span>
+                        <span class="text-highlight pl-2">}</span>
+                    </h1>
+                    <p class="lead text-body-secondary">
+                        <span id="subject_title" class="desc d-block">...</span>
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="sections-wrapper">
-        <div class="section-blocks mb-5">
-            <div id="section-content" class="section-content section">
-                <div class="container py-5">
-
-                    <h3 class="section-title mb-5">Lezioni</h3>
-
-                    <div class="accordion module-accordion" id="module-accordion">
-                        <div id="js"></div>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="sections-wrapper">
+                <div class="section-blocks mb-5">
+                    <div id="section-content" class="section-content section">
+                        <div class="container py-5">
+                            <h3 class="section-title mb-5">Lezioni</h3>
+                            <div class="accordion module-accordion" id="module-accordion">
+                                <div id="js"></div>
+                            </div>
+                        </div>
                     </div>
-
-                    <br>
-
-                    <div class="text-center mt-5">
-                        <a class="btn btn-primary scrollto" href="../index.html">Indietro</a>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="text-center mt-5">
+            <a class="btn btn-primary scrollto" href="../index.html">Indietro</a>
+        </div>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
@@ -266,7 +267,7 @@
                         $('#js').append(text);
                     }
                 })
-                    .fail(function (jqXHR, textStatus, errorThrown) {                        
+                    .fail(function (jqXHR, textStatus, errorThrown) {
                         $('#js').text("Si è verificato un errore durante il caricamento delle lezioni.");
                         console.error("An error occurred:", errorThrown);
                     });
@@ -283,12 +284,12 @@
 
                 console.log("click on " + index_lesson_text);
 
-                var index_lesson =  parseInt(index_lesson_text);
+                var index_lesson = parseInt(index_lesson_text);
 
                 if (lessons_clicked.includes(index_lesson)) {
                     console.log("La lezione con ID " + index_lesson_text + " è già stata caricata ...");
                 } else {
-                    
+
                     // Text
                     var text_file_name = json_lesson_response.lessons[index_lesson].text;
                     console.log("loading text " + text_file_name + "....");
@@ -302,8 +303,8 @@
 
                     lessons_clicked.push(index_lesson);
 
-                }                
-                
+                }
+
                 console.log(lessons_clicked);
 
             } catch (ex) {
